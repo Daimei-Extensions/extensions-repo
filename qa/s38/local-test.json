@@ -1,0 +1,28 @@
+{
+  "extensions": [
+    {
+      "artifact": {
+        "downloadUrl": null,
+        "fileName": "novel-jabrascan-extension-debug.apk",
+        "sha256": "8c825a8b3ba2ce16724a25327c1c1f4db403d21389946d0c521a21d537c232f2",
+        "size": 9201981
+      },
+      "entryClass": "app.novel.extension.jabrascan.JabraScanSource",
+      "id": "app.novel.extension.jabrascan",
+      "minSdk": 26,
+      "name": "JabraScan (extension)",
+      "novelApi": "1.3",
+      "signing": {
+        "certificateSha256": [
+          "64d12ca2d78d13b81e2f6369dff8150c0d30eb92ec52e3bd9365b3daf4576ff9"
+        ],
+        "purpose": "development-only"
+      },
+      "versionCode": 4,
+      "versionName": "1.0.3"
+    }
+  ],
+  "hostCompatible": false,
+  "schemaVersion": 1,
+  "status": "local-test"
+}
