@@ -1,13 +1,24 @@
-# S39 experimental distribution QA — not a release
+# S39 experimental distribution QA — NOT an official release
 
-This directory contains one disposable test extension for a separately authorized Daimei S39 QA installation gate. Do not install it in a production reader or treat it as a trusted official source. MatchaNovels, SkyNovels, JabraScan and Daimei app APKs are not distributed here.
+This isolated branch hosts one pre-existing disposable extension APK and a `daimei-novel-distribution` schema2 catalog for a separately authorized Daimei S39 QA installation gate. It does not publish Daimei, MatchaNovels, SkyNovels or JabraScan releases. Do not install this fixture in a production reader or infer trust from its presence here.
+
+## Exact fixture and declarations
 
 - Package: `app.novel.extension.fixtures`, version1.0.0/code1, minSdk26, novel-api1.1.
-- Existing Android Debug development/QA signer; no production key, keystore or credentials are included. Its public certificate is not an execution grant.
-- The APK is the pre-existing test artifact; no rebuild or new certificate was performed for hosting.
-- Source IDs: `fixture-extension` and `http-fixture-extension`. The HTTP source targets an emulator-only10.0.2.2 fixture server; do not invoke its content requests on a physical phone. The self-contained source contains synthetic sample content and a non-resolving fixture.invalid image reference.
-- The original project's licenses and attributions remain applicable. This metadata is not a dependency-license audit.
+- Sources: `fixture-extension` (synthetic offline sample) and `http-fixture-extension` (emulator-only10.0.2.2 HTTP fixture; do not fetch its content on a physical phone). An image uses the intentionally non-resolving fixture.invalid host.
+- Existing Android Debug development/QA certificate, not a production or unique per-fixture key. No private key, keystore, password, device record or local configuration is included.
+- `artifact-metadata.json` describes the original inspected bytes. `SHA256SUMS` covers the APK and catalog. No APK rebuild, host app rebuild or certificate change occurred for hosting.
+- The original project's licenses and attribution remain applicable; this is not a dependency-license audit.
 
-`artifact-metadata.json` and `SHA256SUMS` describe these exact bytes. A subsequent commit adds the existing schema2 catalog with an artifact URL pinned to this artifact commit. Before publication, that URL is a planned address, not a live endpoint.
+## Commit-pinned artifact
 
-Matching a hash from the same catalog proves only byte agreement, not independent authenticity. Repository enrollment, artifact-origin consent, normal Android installer confirmation and explicit execution trust remain separate. Public installation stays disabled; do not bypass any gate. No Samsung operation or automatic Android test follows hosting publication.
+The catalog points to this exact artifact commit: `93c87fd3f615a84e5290cd8b512973fcc78a64db`.
+Artifact URL: `https://raw.githubusercontent.com/Daimei-Extensions/extensions-repo/93c87fd3f615a84e5290cd8b512973fcc78a64db/qa/s39/novel-fixtures-extension-1.0.0-qa.apk`.
+
+The catalog is `catalog.json` beside this README. Use a Raw URL with the full commit ID containing that catalog, not a mutable branch reference. Neither commit-address construction nor a local parser result asserts remote availability: direct anonymous HTTPS200, no redirects, bytes/size/hash and the unchanged S39 origin policy must be observed after the single authorized push. Never weaken the policy or retry a failed push automatically.
+
+## Trust and Android boundary
+
+Hashes and signer declarations from the same catalog are untrusted expectations, not independent authenticity, cryptographic preinstallation proof or execution authority. Keep repository enrollment, artifact-origin consent, normal Android confirmation and explicit scoped execution trust separate. No automatic trust/load, silent installation, public installer activation or Android test follows this publication.
+
+Installation/rejection, reconciliation, execution gating, source recognition, restart and updates are NOT proved by hosting. They need a separate explicit human grant. This branch must not change main, qa-s38-readonly, historical fixtures, Actions or protection rules.

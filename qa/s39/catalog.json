@@ -1,0 +1,30 @@
+{
+  "protocol": "daimei-novel-distribution",
+  "schemaVersion": 2,
+  "repository": "Daimei-Extensions/extensions-repo QA S39 EXPERIMENTAL ONLY",
+  "extensions": [
+    {
+      "packageName": "app.novel.extension.fixtures",
+      "longVersionCode": 1,
+      "versionName": "1.0.0",
+      "novelApi": "1.1",
+      "entryClasses": [
+        "app.novel.extension.fixtures.FixtureNovelSource",
+        "app.novel.extension.fixtures.HttpFixtureNovelSource"
+      ],
+      "minSdk": 26,
+      "sourceIds": [
+        "fixture-extension",
+        "http-fixture-extension"
+      ],
+      "currentSigners": [
+        "5699dd1c6cdab4cef327e63419b83037997e201e9ed8b091126c20208d4fa4df"
+      ],
+      "artifact": {
+        "url": "https://raw.githubusercontent.com/Daimei-Extensions/extensions-repo/93c87fd3f615a84e5290cd8b512973fcc78a64db/qa/s39/novel-fixtures-extension-1.0.0-qa.apk",
+        "size": 303108,
+        "sha256": "6af7c253c3133c3b3309e7b3606dd0ddf05a2dcfb86fc8aa5754e38c3b83c331"
+      }
+    }
+  ]
+}
